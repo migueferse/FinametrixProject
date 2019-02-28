@@ -12,7 +12,8 @@ export class NewsService {
       content:
         "Lorem ipsum dolor sit amet consectetur adipiscing elit litora pulvinar integer malesuada, ornare pharetra class magnis blandit odio quam imperdiet sociosqu etiam, netus erat facilisi praesent non eget fusce eleifend sem lacinia. Leo quam luctus litora dictumst eu aenean malesuada donec cum sodales, fringilla lacinia ornare ultricies potenti odio dignissim eget accumsan, per ligula id purus etiam fusce feugiat penatibus eleifend",
       author: "Migue",
-      archiveDate: "2019-02-27"
+      archiveDate: "2019-02-27",
+      archived: true
     },
     {
       title: "New 2",
@@ -21,7 +22,8 @@ export class NewsService {
       content:
         "Lorem ipsum dolor sit amet consectetur adipiscing elit litora pulvinar integer malesuada, ornare pharetra class magnis blandit odio quam imperdiet sociosqu etiam, netus erat facilisi praesent non eget fusce eleifend sem lacinia. Leo quam luctus litora dictumst eu aenean malesuada donec cum sodales, fringilla lacinia ornare ultricies potenti odio dignissim eget accumsan, per ligula id purus etiam fusce feugiat penatibus eleifend",
       author: "Migue",
-      archiveDate: "2019-02-27"
+      archiveDate: "2019-02-27",
+      archived: false
     },
     {
       title: "New 3",
@@ -30,7 +32,8 @@ export class NewsService {
       content:
         "Lorem ipsum dolor sit amet consectetur adipiscing elit litora pulvinar integer malesuada, ornare pharetra class magnis blandit odio quam imperdiet sociosqu etiam, netus erat facilisi praesent non eget fusce eleifend sem lacinia. Leo quam luctus litora dictumst eu aenean malesuada donec cum sodales, fringilla lacinia ornare ultricies potenti odio dignissim eget accumsan, per ligula id purus etiam fusce feugiat penatibus eleifend",
       author: "Jose",
-      archiveDate: "2019-02-27"
+      archiveDate: "2019-02-27",
+      archived: true
     },
     {
       title: "New 4",
@@ -39,7 +42,8 @@ export class NewsService {
       content:
         "Lorem ipsum dolor sit amet consectetur adipiscing elit litora pulvinar integer malesuada, ornare pharetra class magnis blandit odio quam imperdiet sociosqu etiam, netus erat facilisi praesent non eget fusce eleifend sem lacinia. Leo quam luctus litora dictumst eu aenean malesuada donec cum sodales, fringilla lacinia ornare ultricies potenti odio dignissim eget accumsan, per ligula id purus etiam fusce feugiat penatibus eleifend",
       author: "Jose",
-      archiveDate: "2019-02-27"
+      archiveDate: "2019-02-27",
+      archived: true
     },
     {
       title: "New 5",
@@ -48,7 +52,8 @@ export class NewsService {
       content:
         "Lorem ipsum dolor sit amet consectetur adipiscing elit litora pulvinar integer malesuada, ornare pharetra class magnis blandit odio quam imperdiet sociosqu etiam, netus erat facilisi praesent non eget fusce eleifend sem lacinia. Leo quam luctus litora dictumst eu aenean malesuada donec cum sodales, fringilla lacinia ornare ultricies potenti odio dignissim eget accumsan, per ligula id purus etiam fusce feugiat penatibus eleifend",
       author: "Migue",
-      archiveDate: "2019-02-27"
+      archiveDate: "2019-02-27",
+      archived: true
     }
   ];
 
@@ -68,4 +73,5 @@ export interface New {
   content: string
   author: string;
   archiveDate: string;
+  archived: boolean
 }
