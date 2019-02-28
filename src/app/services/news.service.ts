@@ -6,6 +6,7 @@ import { Injectable } from "@angular/core";
 export class NewsService {
   private news: New[] = [
     {
+      _id: 1,
       title: "New 1",
       description: "Description new 1",
       date: "2019-02-27",
@@ -16,6 +17,7 @@ export class NewsService {
       archived: true
     },
     {
+      _id: 2,
       title: "New 2",
       description: "Description new 2",
       date: "2019-02-27",
@@ -26,6 +28,7 @@ export class NewsService {
       archived: false
     },
     {
+      _id: 3,
       title: "New 3",
       description: "Description new 3",
       date: "2019-02-27",
@@ -36,6 +39,7 @@ export class NewsService {
       archived: true
     },
     {
+      _id: 4,
       title: "New 4",
       description: "Description new 4",
       date: "2019-02-27",
@@ -46,6 +50,7 @@ export class NewsService {
       archived: true
     },
     {
+      _id: 5,
       title: "New 5",
       description: "Description new 5",
       date: "2019-02-27",
@@ -67,6 +72,7 @@ export class NewsService {
 }
 
 export interface New {
+  _id: number;
   title: string;
   description: string;
   date: string;
