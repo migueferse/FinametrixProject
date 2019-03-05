@@ -7,7 +7,7 @@ const NewsSchema = new Schema({
     date: { type: String },
     content: { type: String },
     author: { type: String },
-    archiveData: { type: String },
+    archiveDate: { type: String },
     archived: { type: Boolean },
     removed: { type: Boolean }
 });

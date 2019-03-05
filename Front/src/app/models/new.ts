@@ -1,7 +1,7 @@
 export class New {
 
     constructor(_id = '', title = '', description = '', date = '', content = '',
-     author = '', archiveDate = '', archived = true, removed = false) {
+     author = '', archiveDate = '', archived = false, removed = false) {
          this._id = _id;
          this.title = title;
          this.description = description;

@@ -24,7 +24,7 @@ export class NewComponent implements OnInit {
 
   archiveNew(neww: New) {
     this.newsService.selectedNew = neww;
-    this.newsService.selectedNew.archived = false;
+    this.newsService.selectedNew.archived = true;
     this.newsService.putNew(neww)
     .subscribe(res => {console.log('Updated Successfuly')})
   }

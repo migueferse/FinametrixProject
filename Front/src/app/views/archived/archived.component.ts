@@ -25,7 +25,8 @@ export class ArchivedComponent implements OnInit {
   removeNew(neww: New) {
     this.newsService.selectedNew = neww;
     this.newsService.selectedNew.removed = true;
-    this.newsService.putNew(neww)
-    .subscribe(res => {console.log('Updated Successfuly')})
+    this.newsService.putNew(neww).subscribe(res => {
+      console.log("Updated Successfuly");
+    });
   }
 }
