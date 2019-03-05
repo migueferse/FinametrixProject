@@ -1,21 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { NewsService, New } from '../../services/news.service';
+import { Component, OnInit } from "@angular/core";
+import { NewsService } from "../../services/news.service";
+import { New } from "../../models/new";
 
 @Component({
-  selector: 'app-new',
-  templateUrl: './new.component.html',
-  styleUrls: ['./new.component.css']
+  selector: "app-new",
+  templateUrl: "./new.component.html",
+  styleUrls: ["./new.component.css"]
 })
 export class NewComponent implements OnInit {
-
   news: New[] = [];
-  constructor( private _newsService: NewsService) {
-    
-   }
+  constructor(private newsService: NewsService) {}
 
   ngOnInit() {
-  this.news = this._newsService.getNews();
-  console.log( this.news);
+    this.getNews();
   }
 
+  getNews() {
+    this.newsService.getNews().subscribe(res => {
+      this.news = res as New[];
+      console.log(res);
+    });
+  }
+
+  archiveNew(neww: New) {
+    this.newsService.selectedNew = neww;
+    this.newsService.selectedNew.archived = false;
+    this.newsService.putNew(neww)
+    .subscribe(res => {console.log('Updated Successfuly')})
+  }
 }

@@ -8,7 +8,8 @@ const NewsSchema = new Schema({
     content: { type: String },
     author: { type: String },
     archiveData: { type: String },
-    archived: { type: Boolean }
+    archived: { type: Boolean },
+    removed: { type: Boolean }
 });
 
 module.exports = mongoose.model('news', NewsSchema);

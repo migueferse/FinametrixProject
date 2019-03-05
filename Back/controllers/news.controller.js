@@ -22,10 +22,11 @@ newsCtrl.editNew = async(req, res) => {
         content: req.body.content,
         author: req.body.author,
         archiveDate: req.body.archiveDate,
-        archived: req.body.archived
+        archived: req.body.archived,
+        removed: req.body.removed
     };
     await News.findByIdAndUpdate(id, { $set: news });
-    res.json({ status: 'New Updated' })
+    res.json({ status: 'New Updated' });
 
 }
 

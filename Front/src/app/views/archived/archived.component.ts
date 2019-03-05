@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { NewsService, New } from "../../services/news.service";
+import { NewsService } from "../../services/news.service";
+import { New } from "../../models/new";
 
 @Component({
   selector: "app-archived",
@@ -8,10 +9,23 @@ import { NewsService, New } from "../../services/news.service";
 })
 export class ArchivedComponent implements OnInit {
   news: New[] = [];
-  constructor(private _newsService: NewsService) {}
+  constructor(private newsService: NewsService) {}
 
   ngOnInit() {
-    this.news = this._newsService.getNews();
-    console.log(this.news);
+    this.getNews();
+  }
+
+  getNews() {
+    this.newsService.getNews().subscribe(res => {
+      this.news = res as New[];
+      console.log(res);
+    });
+  }
+
+  removeNew(neww: New) {
+    this.newsService.selectedNew = neww;
+    this.newsService.selectedNew.removed = true;
+    this.newsService.putNew(neww)
+    .subscribe(res => {console.log('Updated Successfuly')})
   }
 }

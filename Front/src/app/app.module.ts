@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
+// Http
+import { HttpClientModule } from '@angular/common/http';
+
 // Services
 import { NewsService } from './services/news.service';
 
@@ -20,7 +23,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     NewsService

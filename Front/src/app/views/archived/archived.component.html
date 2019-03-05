@@ -1,6 +1,6 @@
 <h1>Archived</h1>
-<div class="card" *ngFor="let new of news; let i = index">
-    <div class="card-body" *ngIf="!new.archived">
+<div class="card" *ngFor="let new of news">
+    <div class="card-body" *ngIf="!new.archived && !new.removed">
         <h5 class="card-title">{{new.title}}</h5>
         <div class="text-right"><small>ArchiveDate: {{new.archiveDate}} </small></div>
         <div class="card-text"><small> {{new.description}}</small></div>
@@ -8,7 +8,7 @@
         <!-- <button type="button" class="btn btn-outline-primary">
           Ir a...
         </button> -->
-        <a class="btn btn-outline-danger text-danger">Remove</a>
+        <a class="btn btn-outline-danger text-danger" (click)="removeNew(new)">Remove</a>
         <div class="text-right">
             <span><small class="text-muted">Author: {{new.author}} </small></span>
             <span><small class="text-muted"> {{new.date}}</small></span>
