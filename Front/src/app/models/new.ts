@@ -1,7 +1,7 @@
 export class New {
 
-    constructor(_id = '', title = '', description = '', date = '', content = '',
-     author = '', archiveDate = '', archived = false, removed = false) {
+    constructor(_id = '', title = '', description = '', date = new Date(), content = '',
+     author = '', archiveDate = new Date(), archived = false, removed = false) {
          this._id = _id;
          this.title = title;
          this.description = description;
@@ -15,10 +15,10 @@ export class New {
     _id: string;
     title: string;
     description: string;
-    date: string;
+    date: Date;
     content: string;
     author: string;
-    archiveDate: string;
+    archiveDate: Date;
     archived: boolean;
     removed: boolean;
 

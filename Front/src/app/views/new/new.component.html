@@ -1,18 +1,16 @@
 <h1>News</h1>
-<div class="card" *ngFor="let new of news">
-    <div class="card-body" *ngIf="!new.archived">
-        <h5 class="card-title">{{new.title}}</h5>
-        <div class="text-right"><small>{{new.date}} </small></div>
-        <div class="card-text"><small> {{new.description}}</small></div>
-        <p class="card-text">{{new.content}}</p>
-        <!-- <button type="button" class="btn btn-outline-primary">
-          Ir a...
-        </button> -->
-        <a class="btn btn-outline-primary text-primary" (click)="archiveNew(new)">Archive</a>
-        <div class="text-right">
-            <span><small class="text-muted">Author: {{new.author}} </small></span>
-            <span><small class="text-muted"> ArchiveDate: {{new.archiveDate}}</small></span>
+<div *ngFor="let new of news">
+    <div class="card border border-secondary mb-1" *ngIf="!new.archived">
+        <div class="card-body">
+            <h5 class="card-title">{{new.title}}</h5>
+            <div class="text-right"><small>{{new.date | date:'longDate'}} </small></div>
+            <div class="card-text"><small> {{new.description}}</small></div>
+            <p class="card-text">{{new.content}}</p>
+            <div class="text-right">
+                <span><small class="text-muted">Author: {{new.author}} </small></span>
+                <span><small class="text-muted"> Archive Date: {{new.archiveDate | date:'mediumDate'}}</small></span>
+            </div>
+            <a class="btn btn-outline-primary text-primary" (click)="archiveNew(new)">Archive</a>
         </div>
-
     </div>
 </div>

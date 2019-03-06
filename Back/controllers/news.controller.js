@@ -30,4 +30,9 @@ newsCtrl.editNew = async(req, res) => {
 
 }
 
+newsCtrl.deleteNew = async(req, res) => {
+    await News.findByIdAndRemove(req.params.id);
+    res.json({ status: 'New Deleted' })
+}
+
 module.exports = newsCtrl;

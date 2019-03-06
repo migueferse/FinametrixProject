@@ -4,8 +4,7 @@ import { New } from "../../models/new";
 
 @Component({
   selector: "app-archived",
-  templateUrl: "./archived.component.html",
-  styleUrls: ["./archived.component.css"]
+  templateUrl: "./archived.component.html"
 })
 export class ArchivedComponent implements OnInit {
   news: New[] = [];
@@ -18,7 +17,15 @@ export class ArchivedComponent implements OnInit {
   getNews() {
     this.newsService.getNews().subscribe(res => {
       this.news = res as New[];
-      console.log(res);
+      this.news.sort((a, b) => {
+        if (a.archiveDate > b.archiveDate) {
+          return 1;
+        }
+        if (a.archiveDate < b.archiveDate) {
+          return -1;
+        }
+        return 0;
+      });
     });
   }
 
@@ -26,7 +33,7 @@ export class ArchivedComponent implements OnInit {
     this.newsService.selectedNew = neww;
     this.newsService.selectedNew.removed = true;
     this.newsService.putNew(neww).subscribe(res => {
-      console.log("Updated Successfuly");
+      console.log("Updated Successfully");
     });
   }
 }
